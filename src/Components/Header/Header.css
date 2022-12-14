@@ -1,0 +1,40 @@
+*{    
+    font-family: 'Montserrat', sans-serif;
+}
+.header-logo{
+    /* height: %; */
+    width: 36%;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin-left:5%;
+    margin-right: 5%;
+}
+.header-btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    margin-top: 3%;
+}
+.btn-header{
+    height: 100%;
+    margin: 0px;
+}
+
+.btn-header-btn{
+    border: 0px solid black;
+    background-color: rgba(240, 248, 255, 0);
+    height: 50px;
+    width: 300px;
+    font-size: 18px;
+    transition: all ease 1s;
+}
+.btn-header-btn:hover{
+    cursor: pointer;
+    background-color: #012f6309;
+    /* font-weight: bold; */
+    letter-spacing: 2px;
+    text-decoration: underline;
+}

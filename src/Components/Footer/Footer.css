@@ -1,0 +1,33 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 4rem 0 4rem 0;
+  font-size: 1vmax;
+  color: #012f63;
+  background: #a7bbc3;
+  font-weight: bold;
+  bottom: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: #012f63;
+  cursor: pointer;
+}
+
+.social-footer-icon {
+  transition: all ease 1s;
+}
+
+.social-media-footer {
+  margin-top: 1vmax;
+}
+
+.social-footer-icon:hover {
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: larger;
+}

@@ -1,0 +1,131 @@
+ /* Frame 5 */
+.frame{
+position: absolute;
+width: auto;
+height: auto;
+left: 4vmax;
+top: 8vmax;
+bottom: 0px;}
+
+
+
+/* Rectangle 2 */
+.div-1{
+position: absolute;
+width: 25vmax;
+height: 35vmax;
+left: 30vmax;
+/* top: 42px; */
+
+background: rgba(167, 187, 195, 0.15);
+border-radius: 7px; }
+
+
+/* Rectangle 3 */
+
+.div-2
+{ position: absolute;
+width: 25vmax;
+height: 23vmax;
+left: 15vmax;
+top: 10vmax;
+
+background: rgba(254, 102, 123, 0.12);
+border-radius: 7px; }
+
+
+/* Rectangle 4 */
+
+.div-3{position: absolute;
+width: 20vmax;
+height: 15vmax;
+left: 3vmax;
+top: 5vmax;
+
+background: rgba(167, 187, 195, 0.15);
+border-radius: 7px; }
+
+
+/* Rectangle 5 */
+.div-4{
+position: absolute;
+width: 15vmax;
+height: 15vmax;
+left: 2vmax;
+top: 23vmax;
+
+background: rgba(167, 187, 195, 0.15);
+border-radius: 7px; 
+}
+
+.home{
+    height:40vmax;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    margin: 16vh 6vw 10vmax 8vw;
+    
+}
+ 
+.home-text{
+    font-size: 5.5vmax;
+    font-weight: 700;
+}
+
+.btn-get-started{
+    position: relative;
+    border: 0px;
+    width: 15vmax;
+    height: 4vmax;
+    /* width: 30vh;
+    height: 8vh; */
+    /* font-weight: bold; */
+    color: white;
+    background-color:#FE667B ;
+    border-radius: 6px;
+    font-size: 1.6vmax;
+    margin-top: 40vmin;
+    /* right: 20vmax; */
+    /* transition: all ease 1s; */
+}
+.btn-get-started:hover{
+    background-color: #f8223f;
+    cursor: pointer;
+    letter-spacing: 2px;
+}
+
+
+
+@media screen and (max-width: 480px) {
+    .home{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .home-text{
+        text-align: center;
+        
+    }
+    .div-1{
+        display: none;
+    }
+    .div-2{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 481px) and  (max-width: 768px){
+    .home{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 769px) and  (max-width: 1024px){}
+
+@media screen and (min-width: 1025px) and  (max-width: 1200px){}
+
+@media screen and (min-width: 1201px) {}
