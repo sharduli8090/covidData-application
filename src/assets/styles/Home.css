@@ -4,7 +4,7 @@ position: absolute;
 width: auto;
 height: auto;
 left: 4vmax;
-top: 8vmax;
+top: 15vmax;
 bottom: 0px;}
 
 
@@ -88,7 +88,7 @@ border-radius: 7px;
     font-size: 1.6vmax;
     margin-top: 40vmin;
     /* right: 20vmax; */
-    /* transition: all ease 1s; */
+    transition: all ease 1s;
 }
 .btn-get-started:hover{
     background-color: #f8223f;
@@ -126,6 +126,15 @@ border-radius: 7px;
 
 @media screen and (min-width: 769px) and  (max-width: 1024px){}
 
-@media screen and (min-width: 1025px) and  (max-width: 1200px){}
+@media screen and (min-width: 1025px) and  (max-width: 1200px){
+    
+    .frame{
+        top: 8vmax;
+    }
+}
 
-@media screen and (min-width: 1201px) {}
+@media screen and (min-width: 1201px) {
+    .frame{
+        top: 8vmax;
+    }
+}

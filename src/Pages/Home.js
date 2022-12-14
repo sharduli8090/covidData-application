@@ -16,10 +16,10 @@ export default function Home(){
             <div className="home-text">
                 Check the Latest Covid Data from just one tap!
             </div>
-        <div>
+        {/* <div> */}
             
         <Link to="country" className="btn-get-started-link"><button className="btn-get-started">Get Started</button></Link> 
-        </div>
+        {/* </div> */}
         </div>
         </>
     );
