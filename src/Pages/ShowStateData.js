@@ -49,6 +49,7 @@ function ShowStateData() {
             setState("")
         }
     }
+    
     let stateIndex = 0;
 
 
@@ -90,15 +91,15 @@ function ShowStateData() {
 
                 <div className="info-container">
                     <div className="info info-o info-location">
-                        Location : {
-                        graph.location
-                    } </div>
-                    {/* <div className="info info-e info-lastChecked">
+                        Location : {graph.location}
+                    </div>
+                    <div className="info info-e info-lastChecked">
                 Last Checked : {graph.lastChecked}
                 </div>
                 <div className="info info-o info-lastReported">
-                Last Reported : {Total.lastReported}
-                </div> */} </div>
+                Last Reported : {graph.lastReported}
+                </div> 
+                </div>
             </div>
         </>
     );
