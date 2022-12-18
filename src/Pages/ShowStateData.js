@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import {
     BarChart,
     Tooltip,
@@ -6,11 +6,10 @@ import {
     XAxis,
     YAxis,
     CartesianGrid,
-    Bar,
-    LabelList,
-    LineChart,
-    Line
+    Bar
 } from 'recharts';
+import '../assets/styles/ShowStateData.css';
+import '../assets/styles/ShowCountryStateData.css';
 
 function ShowStateData() {
 
@@ -19,14 +18,13 @@ function ShowStateData() {
         setState(e.target.value)
     }
 
+
     const [countryRegionWise, setcountryRegionWise] = useState([]);
 
     const totalData = (state) => {
 
 
         if (state !== "") {
-
-            setState("")
 
 
             const options1 = {
@@ -45,16 +43,22 @@ function ShowStateData() {
             countryRegionWise.map((e, ind) => {
                 if (e[ind].keyId.includes(state)) {
                     stateIndex = ind;
+                    // console.log(e.keyId);
+
                 } else {
                     alert('Data Not Found')
                 }
             })
-
-        } else {
-            alert("Please Enter Country Name")
+            setState("")
         }
     }
     let stateIndex = 0;
+
+
+    // const capitalize = (text)=>{
+    //     return text.charAt(0).toUpperCase() + text.slice(1);
+    // }
+
 
     let graph = [{
             location: countryRegionWise[stateIndex] && countryRegionWise[stateIndex].keyId,
@@ -63,39 +67,41 @@ function ShowStateData() {
         }]
     return (
         <>
+        <div className="main-box">
+            <div className="input-box">
             <input type='text'
                 onChange={onChangedValue}
-                value={state}/>
+                value={state} placeholder="Enter Region Name To View Graph"/>
             <button onClick={
                 () => totalData(state)
             }>Show</button>
-            {}
-
-            <BarChart width={1500}
+</div>
+<div className="chart-box">
+            <BarChart width={1000}
                 height={250}
                 data={graph}>
                 <CartesianGrid strokeDasharray="3 3"/>
-                <XAxis dataKey="keyId"/>
+                <XAxis dataKey="location"/>
                 <YAxis/>
                 <Tooltip/>
                 <Legend/>
                 <Bar dataKey="confirmed" fill="#A7BBC3"/>
                 <Bar dataKey="deaths" fill="#FE667B"/>
             </BarChart>
-
+</div>
 
             <div className="info-container">
-                <div className="info info-location">
+                <div className="info info-o info-location">
                     Location : {
                     graph.location
                 } </div>
-                {/* <div className="info info-lastChecked">
+                {/* <div className="info info-e info-lastChecked">
                 Last Checked : {graph.lastChecked}
                 </div>
-                <div className="info info-lastReported">
+                <div className="info info-o info-lastReported">
                 Last Reported : {Total.lastReported}
                 </div> */} </div>
-
+</div>
         </>
     );
 }

@@ -71,6 +71,7 @@
 .home-text {
   font-size: 5.5vmax;
   font-weight: 700;
+  z-index: 1;
 }
 
 .btn-get-started {

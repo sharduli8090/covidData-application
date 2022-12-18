@@ -1,5 +1,4 @@
-import {checkboxClasses} from "@mui/material";
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import {
     BarChart,
     Tooltip,
@@ -8,16 +7,22 @@ import {
     YAxis,
     CartesianGrid,
     Bar,
-    LabelList,
     LineChart,
-    Line
+    Line,
+    AreaChart,
+    Area,
+    stop,
+    linearGradient,
+    defs
 } from 'recharts';
+import '../assets/styles/ShowCountryData.css';
+import '../assets/styles/ShowCountryStateData.css';
 
 function ShowCountryData() {
 
     const [country, setCountry] = useState("");
     const onChangedValue = (e) => {
-        setCountry(e.target.value)
+        setCountry(capitalize(e.target.value))
     }
     const [Total, setTotal] = useState([]);
     const [countryRegionWise, setcountryRegionWise] = useState([]);
@@ -36,9 +41,7 @@ function ShowCountryData() {
                 console.log(response)
                 setTotal(response.data)
             }).catch(err => console.error(err));
-            if (Total.location === "Global") {
-                alert("You have entered a wrong country name")
-            }
+
             setCountry("")
 
 
@@ -60,6 +63,9 @@ function ShowCountryData() {
             alert("Please Enter Country Name")
         }
     }
+    const capitalize = (text) => {
+        return text.charAt(0).toUpperCase() + text.slice(1);
+    }
 
 
     let graph = [{
@@ -67,63 +73,83 @@ function ShowCountryData() {
             confirmed: Total.confirmed,
             deaths: Total.deaths
         }]
+
+
     return (
         <>
-            <input type='text'
-                onChange={onChangedValue}
-                value={country}/>
-            <button onClick={
-                () => totalData(country)
-            }>Show</button>
-            {
-            console.log(Total.location + " Total.location")
-        }
 
+            <div className="main-box">
+                <div className="input-box">
 
-            <BarChart width={730}
-                height={250}
-                data={graph}>
-                <CartesianGrid strokeDasharray="3 3"/>
-                <XAxis dataKey="location"/>
-                <YAxis/>
-                <Tooltip/>
-                <Legend/>
-                <Bar dataKey="confirmed" fill="#A7BBC3"/>
-                <Bar dataKey="deaths" fill="#FE667B"/>
-            </BarChart>
-            <LineChart width={1500}
-                height={250}
-                data={countryRegionWise}
-                margin={
+                    <input type='text'
+                        onChange={onChangedValue}
+                        value={country} placeholder="Enter Country Name To View Graph"/>
+                    <button onClick={
+                        () => totalData(capitalize(country))
+                    }>Show</button>
                     {
-                        top: 5,
-                        right: 30,
-                        left: 20,
-                        bottom: 5
-                    }
-            }>
-                <CartesianGrid strokeDasharray="3 3"/>
-                <XAxis dataKey="province"/>
-                <YAxis/>
-                <Tooltip/>
-                <Legend/>
-                <Line type="monotone" dataKey="confirmed" stroke="#A7BBC3"/>
-                <Line type="monotone" dataKey="deaths" stroke="#FE667B"/>
-            </LineChart>
+                    console.log(Total.location + " Total.location")
+                } </div>
 
-            <div className="info-container">
-                <div className="info info-location">
-                    Location : {
-                    Total.location
-                } </div>
-                <div className="info info-lastChecked">
-                    Last Checked : {
-                    Total.lastChecked
-                } </div>
-                <div className="info info-lastReported">
-                    Last Reported : {
-                    Total.lastReported
-                } </div>
+                <div className="chart-box">
+
+                    <BarChart width={730}
+                        height={250}
+                        data={graph}>
+                        <CartesianGrid strokeDasharray="3 3"/>
+                        <XAxis dataKey="location"/>
+                        <YAxis/>
+                        <Tooltip/>
+                        <Legend/>
+                        <Bar dataKey="confirmed" fill="#A7BBC3"/>
+                        <Bar dataKey="deaths" fill="#FE667B"/>
+                    </BarChart>
+                    <AreaChart width={1200}
+                        height={250}
+                        data={countryRegionWise}
+                        margin={
+                            {
+                                top: 10,
+                                right: 30,
+                                left: 0,
+                                bottom: 0
+                            }
+                    }>
+                        <defs>
+                            <linearGradient id="color" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="5%" stopColor="#A7BBC3"
+                                    stopOpacity={0.8}/>
+                                <stop offset="95%" stopColor="#8884d8"
+                                    stopOpacity={0}/>
+                            </linearGradient>
+                        </defs>
+                        <XAxis dataKey="province"/>
+                        <YAxis/>
+                        <CartesianGrid strokeDasharray="3 3"/>
+                        <Tooltip/>
+                        <Area type="monotone" dataKey="confirmed" stroke="#A7BBC3"
+                            fillOpacity={1}
+                            fill="url(#color)"/>
+                        <Area type="monotone" dataKey="deaths" stroke="#FE667B"
+                            fillOpacity={1}
+                            fill="#FE667B"/>
+                    </AreaChart>
+
+                </div>
+                <div className="info-container">
+                    <div className="info-o info info-location">
+                        Location : {
+                        Total.location
+                    } </div>
+                    <div className="info-e info info-lastChecked">
+                        Last Checked : {
+                        Total.lastChecked
+                    } </div>
+                    <div className="info-o info info-lastReported">
+                        Last Reported : {
+                        Total.lastReported
+                    } </div>
+                </div>
             </div>
         </>
     );
