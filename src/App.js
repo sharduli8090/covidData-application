@@ -48,7 +48,7 @@ class App extends Component {
       <Route path="/" element={<Home />}/>
         <Route path="country" element={<ShowCountryData />}/>
           <Route path="state" element={<ShowStateData />} />
-          <Route path="tables" element={<ShowTable />} />
+          <Route path="table" element={<ShowTable />} />
     </Routes><br/>
     <Footer/>
   </Router>
