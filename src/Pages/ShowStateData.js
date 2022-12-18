@@ -8,7 +8,6 @@ import {
     CartesianGrid,
     Bar
 } from 'recharts';
-import '../assets/styles/ShowStateData.css';
 import '../assets/styles/ShowCountryStateData.css';
 
 function ShowStateData() {

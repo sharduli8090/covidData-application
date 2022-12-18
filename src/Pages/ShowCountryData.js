@@ -10,7 +10,6 @@ import {
     AreaChart,
     Area
 } from 'recharts';
-import '../assets/styles/ShowCountryData.css';
 import '../assets/styles/ShowCountryStateData.css';
 
 function ShowCountryData() {
