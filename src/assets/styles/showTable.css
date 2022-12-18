@@ -16,8 +16,8 @@
   letter-spacing: 1px;
   transition: all ease 1s;
 }
-#header-table:hover{
-    letter-spacing: 20px;
+#header-table:hover {
+  letter-spacing: 20px;
 }
 table {
   width: 100%;
@@ -29,12 +29,11 @@ td {
   width: 10vmax;
   transition: all ease 1s;
 }
-th:hover{
-letter-spacing: 3px;
-/* font-size: 1.19vmax; */
+th:hover {
+  letter-spacing: 3px;
 }
 th {
-  padding: 1.3vmax ;
+  padding: 1.3vmax;
   padding-top: 0.5vmax;
   background-color: #fe667a;
   color: white;
@@ -53,10 +52,10 @@ tr:nth-child(even) {
 }
 
 @media screen and (max-width: 400px) {
-.main-table-box{
+  .main-table-box {
     margin-top: 1.7vmax;
     margin-bottom: 5vmax;
     margin-left: 7vmax;
     margin-right: 7vmax;
-}
+  }
 }

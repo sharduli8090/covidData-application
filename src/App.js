@@ -1,16 +1,4 @@
 import React, {Component} from 'react';
-import {
-    BarChart,
-    Tooltip,
-    Legend,
-    XAxis,
-    YAxis,
-    CartesianGrid,
-    Bar,
-    LabelList,
-    LineChart,
-    Line
-} from 'recharts';
 import ShowCountryData from './Pages/ShowCountryData';
 import Home from './Pages/Home';
 import ShowStateData from './Pages/ShowStateData';
@@ -41,7 +29,7 @@ class App extends Component {
                 </Router>
 
 
-</>
+            </>
         );
     }
 }

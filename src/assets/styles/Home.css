@@ -14,34 +14,28 @@
   width: 25vmax;
   height: 35vmax;
   left: 30vmax;
-  /* top: 42px; */
-
   background: rgba(167, 187, 195, 0.15);
   border-radius: 7px;
 }
 
 /* Rectangle 3 */
-
 .div-2 {
   position: absolute;
   width: 25vmax;
   height: 23vmax;
   left: 15vmax;
   top: 10vmax;
-
   background: rgba(254, 102, 123, 0.12);
   border-radius: 7px;
 }
 
 /* Rectangle 4 */
-
 .div-3 {
   position: absolute;
   width: 20vmax;
   height: 15vmax;
   left: 3vmax;
   top: 5vmax;
-
   background: rgba(167, 187, 195, 0.15);
   border-radius: 7px;
 }
@@ -53,7 +47,6 @@
   height: 15vmax;
   left: 2vmax;
   top: 23vmax;
-
   background: rgba(167, 187, 195, 0.15);
   border-radius: 7px;
 }
@@ -79,15 +72,11 @@
   border: 0px;
   width: 15vmax;
   height: 4vmax;
-  /* width: 30vh;
-    height: 8vh; */
-  /* font-weight: bold; */
   color: white;
   background-color: #fe667b;
   border-radius: 6px;
   font-size: 1.6vmax;
   margin-top: 40vmin;
-  /* right: 20vmax; */
   transition: all ease 1s;
 }
 .btn-get-started:hover {

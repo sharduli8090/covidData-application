@@ -43,8 +43,6 @@ function ShowStateData() {
             countryRegionWise.map((e, ind) => {
                 if (e[ind].keyId.includes(state)) {
                     stateIndex = ind;
-                    // console.log(e.keyId);
-
                 } else {
                     alert('Data Not Found')
                 }
@@ -67,41 +65,42 @@ function ShowStateData() {
         }]
     return (
         <>
-        <div className="main-box">
-            <div className="input-box">
-            <input type='text'
-                onChange={onChangedValue}
-                value={state} placeholder="Enter Region Name To View Graph"/>
-            <button onClick={
-                () => totalData(state)
-            }>Show</button>
-</div>
-<div className="chart-box">
-            <BarChart width={1000}
-                height={250}
-                data={graph}>
-                <CartesianGrid strokeDasharray="3 3"/>
-                <XAxis dataKey="location"/>
-                <YAxis/>
-                <Tooltip/>
-                <Legend/>
-                <Bar dataKey="confirmed" fill="#A7BBC3"/>
-                <Bar dataKey="deaths" fill="#FE667B"/>
-            </BarChart>
-</div>
+            <div className="main-box">
+                <div className="input-box">
+                    <input type='text'
+                        onChange={onChangedValue}
+                        value={state}
+                        placeholder="Enter Region Name To View Graph"/>
+                    <button onClick={
+                        () => totalData(state)
+                    }>Show</button>
+                </div>
+                <div className="chart-box">
+                    <BarChart width={1000}
+                        height={250}
+                        data={graph}>
+                        <CartesianGrid strokeDasharray="3 3"/>
+                        <XAxis dataKey="location"/>
+                        <YAxis/>
+                        <Tooltip/>
+                        <Legend/>
+                        <Bar dataKey="confirmed" fill="#A7BBC3"/>
+                        <Bar dataKey="deaths" fill="#FE667B"/>
+                    </BarChart>
+                </div>
 
-            <div className="info-container">
-                <div className="info info-o info-location">
-                    Location : {
-                    graph.location
-                } </div>
-                {/* <div className="info info-e info-lastChecked">
+                <div className="info-container">
+                    <div className="info info-o info-location">
+                        Location : {
+                        graph.location
+                    } </div>
+                    {/* <div className="info info-e info-lastChecked">
                 Last Checked : {graph.lastChecked}
                 </div>
                 <div className="info info-o info-lastReported">
                 Last Reported : {Total.lastReported}
                 </div> */} </div>
-</div>
+            </div>
         </>
     );
 }

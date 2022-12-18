@@ -7,13 +7,8 @@ import {
     YAxis,
     CartesianGrid,
     Bar,
-    LineChart,
-    Line,
     AreaChart,
-    Area,
-    stop,
-    linearGradient,
-    defs
+    Area
 } from 'recharts';
 import '../assets/styles/ShowCountryData.css';
 import '../assets/styles/ShowCountryStateData.css';
@@ -83,7 +78,8 @@ function ShowCountryData() {
 
                     <input type='text'
                         onChange={onChangedValue}
-                        value={country} placeholder="Enter Country Name To View Graph"/>
+                        value={country}
+                        placeholder="Enter Country Name To View Graph"/>
                     <button onClick={
                         () => totalData(capitalize(country))
                     }>Show</button>
