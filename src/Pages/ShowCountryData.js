@@ -1,4 +1,4 @@
-import { checkboxClasses } from "@mui/material";
+import {checkboxClasses} from "@mui/material";
 import React, {useState, useEffect} from "react";
 import {
     BarChart,
@@ -22,9 +22,7 @@ function ShowCountryData() {
     const [Total, setTotal] = useState([]);
     const [countryRegionWise, setcountryRegionWise] = useState([]);
 
-    const totalData = (country) => { 
-
-        // All Country
+    const totalData = (country) => { // All Country
         if (country !== "") {
             const options = {
                 method: 'GET',
@@ -80,9 +78,6 @@ function ShowCountryData() {
             {
             console.log(Total.location + " Total.location")
         }
-            
-
-    
 
 
             <BarChart width={730}
@@ -96,7 +91,17 @@ function ShowCountryData() {
                 <Bar dataKey="confirmed" fill="#A7BBC3"/>
                 <Bar dataKey="deaths" fill="#FE667B"/>
             </BarChart>
-            <LineChart width={1500} height={250} data={countryRegionWise} margin={ { top: 5, right: 30, left: 20, bottom: 5 } }>
+            <LineChart width={1500}
+                height={250}
+                data={countryRegionWise}
+                margin={
+                    {
+                        top: 5,
+                        right: 30,
+                        left: 20,
+                        bottom: 5
+                    }
+            }>
                 <CartesianGrid strokeDasharray="3 3"/>
                 <XAxis dataKey="province"/>
                 <YAxis/>
@@ -108,14 +113,17 @@ function ShowCountryData() {
 
             <div className="info-container">
                 <div className="info info-location">
-                Location : {Total.location}    
-                </div>  
+                    Location : {
+                    Total.location
+                } </div>
                 <div className="info info-lastChecked">
-                Last Checked : {Total.lastChecked}
-                </div>
+                    Last Checked : {
+                    Total.lastChecked
+                } </div>
                 <div className="info info-lastReported">
-                Last Reported : {Total.lastReported}
-                </div>
+                    Last Reported : {
+                    Total.lastReported
+                } </div>
             </div>
         </>
     );

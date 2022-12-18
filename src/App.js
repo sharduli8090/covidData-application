@@ -17,11 +17,7 @@ import ShowStateData from './Pages/ShowStateData';
 import ShowTable from './Pages/ShowTable';
 import Header from './Components/Header/Header'
 import Footer from './Components/Footer/Footer'
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 class App extends Component {
     // constructor(props) {
@@ -31,9 +27,9 @@ class App extends Component {
     //         RegionWise: []
     //     }
     // }
-    // componentDidMount() { 
+    // componentDidMount() {
     //     // All Country
-        
+
 
     // }
 
@@ -41,22 +37,24 @@ class App extends Component {
     render() {
 
         return (
-            <> 
-            <Router>
-<Header/>
-    <Routes>
-      <Route path="/" element={<Home />}/>
-        <Route path="country" element={<ShowCountryData />}/>
-          <Route path="state" element={<ShowStateData />} />
-          <Route path="table" element={<ShowTable />} />
-    </Routes><br/>
-    <Footer/>
-  </Router>
+            <>
+                <Router>
+                    <Header/>
+                    <Routes>
+                        <Route path="/"
+                            element={<Home/>}/>
+                        <Route path="country"
+                            element={<ShowCountryData/>}/>
+                        <Route path="state"
+                            element={<ShowStateData/>}/>
+                        <Route path="table"
+                            element={<ShowTable/>}/>
+                    </Routes><br/>
+                    <Footer/>
+                </Router>
 
 
-
-
-{/* 
+                {/* 
                 <BarChart width={730}
                     height={250}
                     data={this.state.Total}>
@@ -104,9 +102,7 @@ class App extends Component {
                 <hr/>
                 <hr/>
                 <hr/> */}
-{/* <ShowTotalCountryData/> */}
-
-            </>
+                {/* <ShowTotalCountryData/> */} </>
         );
     }
 }

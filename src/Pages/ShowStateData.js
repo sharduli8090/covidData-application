@@ -21,7 +21,7 @@ function ShowStateData() {
 
     const [countryRegionWise, setcountryRegionWise] = useState([]);
 
-    const totalData = (state) => { 
+    const totalData = (state) => {
 
 
         if (state !== "") {
@@ -42,10 +42,10 @@ function ShowStateData() {
                 setcountryRegionWise(response.data.covid19Stats)
             }).catch(err => console.error(err));
 
-            countryRegionWise.map((e,ind)=>{
-                if(e[ind].keyId.includes(state)){
-                    stateIndex=ind;
-                }else{
+            countryRegionWise.map((e, ind) => {
+                if (e[ind].keyId.includes(state)) {
+                    stateIndex = ind;
+                } else {
                     alert('Data Not Found')
                 }
             })
@@ -54,10 +54,10 @@ function ShowStateData() {
             alert("Please Enter Country Name")
         }
     }
-let stateIndex = 0;
+    let stateIndex = 0;
 
     let graph = [{
-            location:countryRegionWise[stateIndex] && countryRegionWise[stateIndex].keyId,
+            location: countryRegionWise[stateIndex] && countryRegionWise[stateIndex].keyId,
             confirmed: countryRegionWise[stateIndex] && countryRegionWise[stateIndex].confirmed,
             deaths: countryRegionWise[stateIndex] && countryRegionWise[stateIndex].deaths
         }]
@@ -69,35 +69,32 @@ let stateIndex = 0;
             <button onClick={
                 () => totalData(state)
             }>Show</button>
-            {
-        }
-            
+            {}
+
             <BarChart width={1500}
-                        height={250}
-                        data={graph}>
-                        <CartesianGrid strokeDasharray="3 3"/>
-                        <XAxis dataKey="keyId"/>
-                        <YAxis/>
-                        <Tooltip/>
-                        <Legend/>
-                        <Bar dataKey="confirmed" fill="#A7BBC3"/>
-                        <Bar dataKey="deaths" fill="#FE667B"/>
-                    </BarChart>
-    
+                height={250}
+                data={graph}>
+                <CartesianGrid strokeDasharray="3 3"/>
+                <XAxis dataKey="keyId"/>
+                <YAxis/>
+                <Tooltip/>
+                <Legend/>
+                <Bar dataKey="confirmed" fill="#A7BBC3"/>
+                <Bar dataKey="deaths" fill="#FE667B"/>
+            </BarChart>
 
 
-            
-                    <div className="info-container">
+            <div className="info-container">
                 <div className="info info-location">
-                Location : {graph.location}    
-                </div>  
+                    Location : {
+                    graph.location
+                } </div>
                 {/* <div className="info info-lastChecked">
                 Last Checked : {graph.lastChecked}
                 </div>
                 <div className="info info-lastReported">
                 Last Reported : {Total.lastReported}
-                </div> */}
-            </div>
+                </div> */} </div>
 
         </>
     );
