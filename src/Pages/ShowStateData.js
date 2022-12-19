@@ -34,8 +34,8 @@ function ShowStateData() {
                 }
             };
             fetch('https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=kl', options1).then(response => response.json()).then(response => {
-                console.log(response)
-                console.log(response.data.covid19Stats);
+                // console.log(response)
+                // console.log(response.data.covid19Stats);
                 setcountryRegionWise(response.data.covid19Stats)
             }).catch(err => console.error(err));
 

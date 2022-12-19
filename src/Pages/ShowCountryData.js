@@ -32,7 +32,7 @@ function ShowCountryData() {
             };
 
             fetch('https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/total?country=' + country, options).then(response => response.json()).then(response => {
-                console.log(response)
+                // console.log(response)
                 setTotal(response.data)
             }).catch(err => console.error(err));
 
@@ -47,8 +47,8 @@ function ShowCountryData() {
                 }
             };
             fetch('https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=' + country, options1).then(response => response.json()).then(response => {
-                console.log(response)
-                console.log(response.data.covid19Stats);
+                // console.log(response)
+                // console.log(response.data.covid19Stats);
                 setcountryRegionWise(response.data.covid19Stats)
             }).catch(err => console.error(err));
 
